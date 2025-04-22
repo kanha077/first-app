@@ -1,0 +1,25 @@
+next.setOnClickListener {
+    val idcurentImageString = "pic$currentImage"
+    val idcurrentImageInt = resources.getIdentifier(idcurentImageString, "id", packageName)
+    image = findViewById(idcurrentImageInt)
+    image.alpha = 0f
+
+    currentImage = (3 + currentImage + 1) % 3
+    val idImageToShowString = "pic$currentImage"
+    val idImageToShowInt = resources.getIdentifier(idImageToShowString, "id", packageName)
+    image = findViewById(idImageToShowInt)
+    image.alpha = 1f
+}
+
+prev.setOnClickListener {
+    val idcurentImageString = "pic$currentImage"
+    val idcurrentImageInt = resources.getIdentifier(idcurentImageString, "id", packageName)
+    image = findViewById(idcurrentImageInt)
+    image.alpha = 0f
+
+    currentImage = (3 + currentImage - 1) % 3
+    val idImageToShowString = "pic$currentImage"
+    val idImageToShowInt = resources.getIdentifier(idImageToShowString, "id", packageName)
+    image = findViewById(idImageToShowInt)
+    image.alpha = 1f
+}
